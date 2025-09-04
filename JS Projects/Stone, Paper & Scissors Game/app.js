@@ -12,8 +12,6 @@ const genCompChoice = () => {
     return options[rnadIndx];
 }
 
-const a = 5;
-
 const drawGame = () => {
     msg.innerText = "Game Was draw. Play Again !"
     msg.style.backgroundColor = "#081b31"
