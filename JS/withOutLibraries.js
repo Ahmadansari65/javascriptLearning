@@ -207,3 +207,52 @@ const removeDuplicate = (arr) => {
     return result;
 }
 console.log(removeDuplicate([1,2,2,3,4,4,5]));
+
+// Rotate Array K times
+
+const rotateArray = (arr,k) => {
+    let n = arr.length;
+    k = k%n;
+    for(let r = 0; r<k; r++){
+        last = arr[n-1];
+        for(let i = n-1; i>0; i--){
+            arr[i] = arr[i-1];
+        }
+        arr[0] = last;
+    }
+    return arr;
+}
+console.log(rotateArray([1,2,3,4,5],2));
+
+// sortArray()
+
+const sortArray = (arr) => {
+    let n = arr.length;
+    for(let i = 0; i<n-1; i++){
+        for(let j =0; j< n-i-1; j++){
+            if(arr[j]>arr[j+1]){
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+console.log(sortArray([5,2,9,1,6,5]))
+
+// find Seconnd largest number in Array
+
+const secondLargest = (arr) => {
+    let largest = -Infinity, Seconnd = -Infinity;
+    for(let i = 0; i<arr.length; i++){
+        if(arr[i] > largest){
+            Seconnd = largest;
+            largest = arr[i];
+        }else if(arr[i]>Seconnd && arr[i] !== largest){
+            Seconnd = arr[i];
+        }
+    }
+    return Seconnd;
+}
+console.log(secondLargest([10,5,8,20,15]));
