@@ -138,121 +138,121 @@ console.log(myConcat(num, [6, 7, 8, 9]));
 
 const largest = (arr) => {
     let max = arr[0];
-    for(let i = 0; i< arr.length; i++){
-        if(max <= arr[i]){
+    for (let i = 0; i < arr.length; i++) {
+        if (max <= arr[i]) {
             max = arr[i];
         }
     }
     return max;
 }
-console.log(largest([4,7,3,9,5,6,7,8,10,1,2]));
+console.log(largest([4, 7, 3, 9, 5, 6, 7, 8, 10, 1, 2]));
 
 // find Smallest number
 
 const Smallest = (arr) => {
     let min = arr[0];
-    for(let i = 0; i< arr.length; i++){
-        if(min >= arr[i]){
+    for (let i = 0; i < arr.length; i++) {
+        if (min >= arr[i]) {
             min = arr[i];
         }
     }
     return min;
 }
-console.log(Smallest([4,7,3,9,5,6,7,8,10,1,2]));
+console.log(Smallest([4, 7, 3, 9, 5, 6, 7, 8, 10, 1, 2]));
 
 // sum of array
 
 const sum = (arr) => {
     let Sum = 0;
-    for(let i=0; i<arr.length; i++){
-     Sum += arr[i];
+    for (let i = 0; i < arr.length; i++) {
+        Sum += arr[i];
     }
     return Sum;
 }
-console.log(sum([1,2,3,4,5]));
+console.log(sum([1, 2, 3, 4, 5]));
 
 // Count Even Odd
 
 const countEO = (arr) => {
-    let c =0, o = 0;
-    for(let i = 0; i<arr.length;i++){
-        if(arr[i]%2 === 0){
+    let c = 0, o = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
             c++;
-        }else{
+        } else {
             o++
         }
     }
-    return{
+    return {
         even: c,
         odd: o,
     };
 }
-console.log(countEO([1,2,3,4,5]));
+console.log(countEO([1, 2, 3, 4, 5]));
 
 // Remove duplicate from Array
 
 const removeDuplicate = (arr) => {
     let result = [];
-    for(let i = 0; i<arr.length; i++){
+    for (let i = 0; i < arr.length; i++) {
         let j;
-        for( j = 0; j<result.length; j++){
-            if(arr[i] === result[j]){
+        for (j = 0; j < result.length; j++) {
+            if (arr[i] === result[j]) {
                 break;
             }
         }
-        if(j === result.length){
+        if (j === result.length) {
             result[result.length] = arr[i];
         }
     }
     return result;
 }
-console.log(removeDuplicate([1,2,2,3,4,4,5]));
+console.log(removeDuplicate([1, 2, 2, 3, 4, 4, 5]));
 
 // Rotate Array K times
 
-const rotateArray = (arr,k) => {
+const rotateArray = (arr, k) => {
     let n = arr.length;
-    k = k%n;
-    for(let r = 0; r<k; r++){
-        last = arr[n-1];
-        for(let i = n-1; i>0; i--){
-            arr[i] = arr[i-1];
+    k = k % n;
+    for (let r = 0; r < k; r++) {
+        last = arr[n - 1];
+        for (let i = n - 1; i > 0; i--) {
+            arr[i] = arr[i - 1];
         }
         arr[0] = last;
     }
     return arr;
 }
-console.log(rotateArray([1,2,3,4,5],2));
+console.log(rotateArray([1, 2, 3, 4, 5], 2));
 
 // sortArray()
 
 const sortArray = (arr) => {
     let n = arr.length;
-    for(let i = 0; i<n-1; i++){
-        for(let j =0; j< n-i-1; j++){
-            if(arr[j]>arr[j+1]){
+    for (let i = 0; i < n - 1; i++) {
+        for (let j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
                 let temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
             }
         }
     }
     return arr;
 }
-console.log(sortArray([5,2,9,1,6,5]))
+console.log(sortArray([5, 2, 9, 1, 6, 5]))
 
 // find Seconnd largest number in Array
 
 const secondLargest = (arr) => {
     let largest = -Infinity, Seconnd = -Infinity;
-    for(let i = 0; i<arr.length; i++){
-        if(arr[i] > largest){
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > largest) {
             Seconnd = largest;
             largest = arr[i];
-        }else if(arr[i]>Seconnd && arr[i] !== largest){
+        } else if (arr[i] > Seconnd && arr[i] !== largest) {
             Seconnd = arr[i];
         }
     }
     return Seconnd;
 }
-console.log(secondLargest([10,5,8,20,15]));
+console.log(secondLargest([10, 5, 8, 20, 15]));
