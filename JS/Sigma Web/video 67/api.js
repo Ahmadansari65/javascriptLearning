@@ -1,4 +1,8 @@
-const URL = "https://api.thecatapi.com/v1/images/search?api_key=YOUR_API_KEY/facts"
+const URL = "https://catfact.ninja/fact";
 
-let promise = fetch(URL);
-console.log(promise);
+const getFacts = async () => {
+  console.log("Getting data ...");
+  let response = await fetch(URL);
+  let data = await response.json();
+  console.log(data);
+};
