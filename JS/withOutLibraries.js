@@ -256,3 +256,101 @@ const secondLargest = (arr) => {
     return Seconnd;
 }
 console.log(secondLargest([10, 5, 8, 20, 15]));
+
+// remove negative numbers from array
+
+const removeNegative = (arr) => {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 0) {
+            result[result.length] = arr[i];
+        }
+    }
+    return result;
+}
+console.log(removeNegative([3, 2, -3, -5, 6, 7]));
+
+// frequency count of element
+
+const frequencyCount = (arr) => {
+    let freq = {};
+    for (let i = 0; i < arr.length; i++) {
+        let key = arr[i];
+        if (freq[key] === undefined) {
+            freq[key] = 1;
+        } else {
+            freq[key]++;
+        }
+    }
+    return freq;
+}
+console.log(frequencyCount([1, 2, 2, 3, 1, 4]));
+
+// split an array into two halves
+
+const splitArrayInTwoHalves = (arr) => {
+    let mid = Math.floor(arr.length / 2);
+    let firstHalve = [];
+    let secondHalve = [];
+    for (let i = 0; i < mid; i++) {
+        firstHalve[firstHalve.length] = arr[i];
+    }
+    for (let j = mid; j < arr.length; j++) {
+        secondHalve[secondHalve.length] = arr[j];
+    }
+    return [firstHalve, secondHalve];
+}
+console.log(splitArrayInTwoHalves([1, 2, 3, 4, 5, 6]));
+
+// third largest number in array
+
+const thirdLargesrNumber = (arr) => {
+    let largest = -Infinity, seccond = -Infinity, third = -Infinity;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > largest) {
+            third = seccond;
+            seccond = largest;
+            largest = arr[i];
+        } else if ((arr[i] > seccond) && arr[i] !== largest) {
+            seccond = arr[i];
+        } else if (arr[i] > third && arr[i] !== largest && arr[i] !== seccond) {
+            third = arr[i];
+        }
+    }
+    return third;
+}
+console.log(thirdLargesrNumber([2, 5, 3, 4, 7, 8, 12, 6]));
+
+const isSorted = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < arr[i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+console.log(isSorted([1, 2, 3, 4, 5]));
+
+// Intersection of two Array
+
+const Intersection = (arr1, arr2) => {
+    let result = [];
+    for (let i = 0; i < arr1.length; i++) {
+        for (let j = 0; j < arr2.length; j++) {
+            if (arr1[i] === arr2[j]) {
+                let exist = false;
+                for (let k = 0; k < result.length; k++) {
+                    if (result[k] === arr1[i]) {
+                        exist = true;
+                        break;
+                    }
+                }
+                if (!exist) {
+                    result[result.length] = arr1[i];
+                }
+            }
+        }
+    }
+    return result;
+}
+console.log(Intersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7, 8]));
